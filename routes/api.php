@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'Api\Auth\LoginController@login');
 
-//ruta protegida por el auth
+//ruta protegida por el auth 
 Route::middleware('auth:api')->group(function () {    
     Route::post('register', 'Api\Auth\RegisterController@register');
 });

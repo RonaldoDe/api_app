@@ -76,9 +76,6 @@ class LoginController extends Controller
             return response()->json(['message' => 'Usuario no encontrado'], 201);
         }
             
-            
-
-            
             //return response()->json( $datos=['datos'] );
 
     
