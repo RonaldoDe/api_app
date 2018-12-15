@@ -17,4 +17,22 @@ class PageController extends Controller
 
         return response()->json($posts, 201);
     }
+
+    public function blogDetails(Request $request)
+    {
+        $post = DB::table('posts')
+        ->where('id_post', request('id'))
+        ->first();
+
+        return response()->json($post, 201);
+    }
+
+    public function offerts()
+    {
+        $offerts = DB::table('posts')
+        ->where('except', 1)
+        ->get();
+
+        return response()->json($offerts, 201);
+    }
 }

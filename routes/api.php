@@ -15,9 +15,11 @@ use Illuminate\Http\Request;
 Route::group(['middleware' => 'cors'], function () {
     Route::post('login', 'Api\Auth\LoginController@login');
     Route::get('/', 'admin_web\PageController@blog');
+    Route::get('post/{id}', 'admin_web\PageController@blogDetails');
+    Route::get('offerts', 'admin_web\PageController@offerts');
+    Route::post('register', 'Api\Auth\RegisterController@register');
     //ruta protegida por el auth 
     Route::middleware('auth:api')->group(function () {    
-        Route::post('register', 'Api\Auth\RegisterController@register');
     });
     
 });
